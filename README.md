@@ -13,6 +13,7 @@ We use regex to parse the C headers – so this tool is horribly cursed by defin
 the generated wrapper.
 
 ## Quickstart
-1. Clone the repo including the subrepos:
-   `git clone --recurse-submodules https://github.com/KizzyCode/PicoSDK-NoStatic-Bindgen-Python`
-2. Generate the wrappers: `python3 src`
+1. Clone the repo: `git clone https://github.com/KizzyCode/PicoSDK-NoStatic-Bindgen-Python`
+2. Enter the repo: `cd PicoSDK-NoStatic-Bindgen-Python`
+3. Checkout the SDK subrepo: `git submodule update --init`
+4. Generate the wrappers: `python3 src`
