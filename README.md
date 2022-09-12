@@ -11,3 +11,8 @@ the SDK.
 ## Word of Warning
 We use regex to parse the C headers – so this tool is horribly cursed by definition. It is recommended to cross-check
 the generated wrapper.
+
+## Quickstart
+1. Clone the repo including the subrepos:
+   `git clone --recurse-submodules https://github.com/KizzyCode/PicoSDK-NoStatic-Bindgen-Python`
+2. Generate the wrappers: `python3 src`
