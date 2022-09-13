@@ -28,7 +28,7 @@ class Function:
         """Parse the outer function signature"""
 
         # Split the signature into return type, name and argument list
-        regex = re.compile(r"static\s+inline\s+(.*?)\s+(\w*)\s*\((.*?)\)", flags=re.S)
+        regex = re.compile(r"static\s+inline\s+(.*?)\s+(?:__attribute__\(\(\w+\)\))?\s*(\w*)\s*\((.*?)\)", flags=re.S)
         match = regex.fullmatch(signature)
         return (match.group(1).strip(), match.group(2).strip(), match.group(3).strip())
     

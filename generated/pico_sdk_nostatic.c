@@ -1336,8 +1336,8 @@ uint32_t nostatic_rom_table_code(uint8_t c1, uint8_t c2) {
  *  - 1 To disable the USB Mass Storage Interface
  *  - 2 To disable the USB PICOBOOT Interface
  */
-void nostatic___attribute__((noreturn)) reset_usb_boot(uint32_t usb_activity_gpio_pin_mask, uint32_t disable_interface_mask) {
-    return __attribute__(usb_activity_gpio_pin_mask, disable_interface_mask);
+void nostatic_reset_usb_boot(uint32_t usb_activity_gpio_pin_mask, uint32_t disable_interface_mask) {
+    return reset_usb_boot(usb_activity_gpio_pin_mask, disable_interface_mask);
 }
 
 
