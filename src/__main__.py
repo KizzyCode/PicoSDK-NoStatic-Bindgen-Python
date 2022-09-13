@@ -8,7 +8,8 @@ from generator import Function, Wrapper
 
 if __name__ == "__main__":
     # Use custom prefix if specified
-    prefix = environ.get("PREFIX", "nostatic_")
+    prefix = environ.get("PREFIX", "__nostatic__")
+    suffix = environ.get("SUFFIX", "")
 
     # Collect all headers
     header_paths = glob("pico-sdk/src/common/**/include/**/*.h", recursive=True)
@@ -20,7 +21,7 @@ if __name__ == "__main__":
     wrappers = []
     for header in headers:
         for function in header.functions:
-            wrapper = Function(function, prefix)
+            wrapper = Function(function, prefix, suffix)
             wrappers.append(wrapper)
     
     # Create the wrapper file

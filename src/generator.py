@@ -7,14 +7,14 @@ class Function:
     synthesized: str
     """The synthesized wrapper"""
 
-    def __init__(self, function: Function, prefix: str = "nostatic_") -> None:
+    def __init__(self, function: Function, prefix: str, suffix: str) -> None:
         # Prepare arguments
         typed_args = Function._typed_arguments(function.arguments)
         untyped_args = Function._untyped_arguments(function.arguments)
 
         # Synthesize function
         self.synthesized = function.comment + "\n"
-        self.synthesized += f"{ function.rettype } { prefix }{ function.name }({ typed_args }) {{\n"
+        self.synthesized += f"{ function.rettype } { prefix }{ function.name }{ suffix }({ typed_args }) {{\n"
         self.synthesized += f"    return { function.name }({ untyped_args });\n"
         self.synthesized += f"}}"
         
